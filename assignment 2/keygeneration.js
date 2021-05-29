@@ -19,8 +19,10 @@ let key=cr.generateKeyPair('rsa',
       { 
          if(!err)
          {
-          fs.writeFile('pprivate.pem',privateKey,function(err){})
+          fs.writeFileSync('pprivate.pem',privateKey)
           fs.writeFile('ppublic.pem',publicKey,function(err){})
+          console.log("public key = ",publicKey.toString('base64')); // toString("base64") in just fuck (no impact)
+          console.log("private key = ",privateKey);
          }
          else
          {
